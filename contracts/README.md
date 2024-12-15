@@ -1,92 +1,89 @@
-# PiggyEdu - Recompensas Niveladas con Paymaster en zkSync Era
+# Piggy-Trivia - Tiered Rewards with Paymaster on zkSync Era
 
-## Descripción del Proyecto
+## Project Description
 
-* **MyERC20**: Un contrato ERC20 personalizado que se emplea para entregar recompensas a los usuarios.
-* **LevelBadgeNFT (Nivel 1, Nivel 2, Nivel 3)**: Cada NFT representa el nivel alcanzado por el usuario. Si el usuario posee un NFT de mayor nivel, recibe más tokens.
-* **LevelRewards**: Un contrato que libera ERC20 tokens a los usuarios según el nivel del NFT que posean.
-   * Nivel 1: 100 tokens
-   * Nivel 2: 200 tokens
-   * Nivel 3: 300 tokens
-* **MyPaymaster**: Un Paymaster que patrocina las transacciones, evitando que el usuario necesite ETH para pagar gas, mejorando la UX.
+* **MyERC20**: A custom ERC20 contract used to distribute rewards to users.
+* **LevelBadgeNFT (Level 1, Level 2, Level 3)**: Each NFT represents the level achieved by the user. Higher-level NFTs grant more tokens.
+* **LevelRewards**: A contract that releases ERC20 tokens to users based on the level of the NFT they own.
+   * Level 1: 100 tokens
+   * Level 2: 200 tokens
+   * Level 3: 300 tokens
+* **MyPaymaster**: A Paymaster that sponsors transactions, removing the need for users to pay gas fees, enhancing UX.
 
-### Flujo Ejemplo:
+### Example Flow:
 
-1. El usuario completa una lección y obtiene un NFT de cierto nivel.
-2. Llama a `claim()` en el contrato `LevelRewards`.
-3. Según el NFT que posea, recibe la cantidad correspondiente de tokens ERC20.
-4. El Paymaster puede cubrir el costo de gas, permitiendo al usuario obtener sus recompensas sin usar ETH.
+1. The user completes a lesson and receives an NFT of a certain level.
+2. Calls `claim()` on the `LevelRewards` contract.
+3. Depending on the NFT owned, they receive the corresponding amount of ERC20 tokens.
+4. The Paymaster can cover the gas cost, allowing the user to claim rewards without using ETH.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-* **Solidity**: Lenguaje para contratos inteligentes.
-* **zkSync Era**: L2 con zkRollups que ofrece Account Abstraction.
-* **Hardhat**: Entorno de desarrollo, compilación y pruebas.
-* **OpenZeppelin**: Librerías estándar para ERC20, ERC721 y utilidades.
+* **Solidity**: Smart contract language.
+* **zkSync Era**: L2 solution with zkRollups offering Account Abstraction.
+* **Hardhat**: Development, compilation, and testing framework.
+* **OpenZeppelin**: Standard libraries for ERC20, ERC721, and utilities.
 
-## Estructura del Repositorio
+## Repository Structure
 
 * `contracts/`
-   * `MyERC20.sol`: Contrato ERC20 personalizado.
-   * `LevelBadgeNFT.sol`: Contratos para NFT de distintos niveles.
-   * `LevelRewards.sol`: Lógica de distribución de recompensas basada en la posesión de NFTs.
-   * `MyPaymaster.sol`: Lógica del Paymaster para patrocinar transacciones.
+   * `MyERC20.sol`: Custom ERC20 contract.
+   * `LevelBadgeNFT.sol`: Contracts for level-based NFTs.
+   * `LevelRewards.sol`: Logic for reward distribution based on NFT ownership.
+   * `MyPaymaster.sol`: Paymaster logic for sponsoring transactions.
 * `deploy/`
-   * `deploy-level-badges.ts`: Script para desplegar los NFTs.
-   * `deploy-paymaster.ts`: Script para desplegar y financiar el Paymaster.
-   * `deploy-level-rewards.ts`: Script para desplegar el contrato de recompensas usando las direcciones existentes.
-* `test/`: Pruebas unitarias para los contratos.
+   * `deploy-level-badges.ts`: Script to deploy the NFTs.
+   * `deploy-paymaster.ts`: Script to deploy and fund the Paymaster.
+   * `deploy-level-rewards.ts`: Script to deploy the rewards contract using existing addresses.
 
-## Pasos de Despliegue
+## Deployment Steps
 
-1. **Instalación de dependencias:**
+1. **Install dependencies:**
 
    ```bash
    yarn install
    ```
 
-
-2. **Compilación de contratos:**
+2. **Compile contracts:**
 
     ```bash
    yarn compile
    ```
 
-3. **Desplegar NFTs de nivel:**
+3. **Deploy level NFTs:**
 
     ```bash
    yarn deploy-level-badges
    ```
-    Esto mostrará las direcciones de Level 1, Level 2 y Level 3 NFTs.
+    This will output the addresses for Level 1, Level 2, and Level 3 NFTs.
 
-4. **Desplegar Paymaster:**
+4. **Deploy Paymaster:**
 
     ```bash
    yarn deploy-paymaster
    ```
-    Este script desplegará el Paymaster y lo financiará con ETH y tokens.
+    This script will deploy the Paymaster and fund it with ETH and tokens.
 
-5. **Desplegar LevelRewards:** Ajusta las direcciones del ERC20 y los NFT en deploy-level-rewards.ts y luego:
+5. **Deploy LevelRewards:** Adjust the addresses for ERC20 and NFTs in `deploy-level-rewards.ts`, then:
 
     ```bash
    yarn deploy-level-rewards
    ```
 
-## Uso
+## Usage
 
-1. **Reclamar Recompensas:** Un usuario con un NFT llama a claim() en LevelRewards.
-    Si tiene Level 1: recibe 100 tokens.
-    Si tiene Level 2: recibe 200 tokens.
-    Si tiene Level 3: recibe 300 tokens.
+1. **Claim Rewards:** A user with an NFT calls `claim()` on `LevelRewards`.
+    - If they own Level 1: They receive 100 tokens.
+    - If they own Level 2: They receive 200 tokens.
+    - If they own Level 3: They receive 300 tokens.
 
-2. **Paymaster:** Si el Paymaster está configurado, las transacciones del usuario pueden ser patrocinadas. Esto significa que no necesita ETH, mejorando la experiencia.
+2. **Paymaster:** If the Paymaster is set up, user transactions can be sponsored. This means no ETH is needed, improving the experience.
 
-## Variables de Entorno
-Copia .env.example a .env y agrega tu clave privada:
+## Environment Variables
+Copy `.env.example` to `.env` and add your private key:
 
     ```bash
-    WALLET_PRIVATE_KEY=tu_clave_privada
+    WALLET_PRIVATE_KEY=your_private_key
     ```
 
-    Esto asegura que las claves nunca se expongan directamente en el código.
-    
+This ensures that keys are never directly exposed in the code.
