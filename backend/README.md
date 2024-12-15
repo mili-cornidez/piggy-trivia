@@ -1,118 +1,38 @@
-# Piggy-Edu Backend
+# Piggy-Trivia Backend
 
-## Descripción
+## Description
 
-API para **Piggy-Edu**
+API for **Piggy-Trivia**
 
 ---
 
-## Requisitos
+## Requirements
 
-- **Node.js** (16 o superior)
-- **NPM** o **Yarn**
-- Archivo .env con:
+- **Node.js** (16 or higher)
+- **NPM** or **Yarn**
+- `.env` file with:
 
 ```env
-SECRET_KEY=<clave_secreta_para_JWT>
+SECRET_KEY=<secret_key_for_JWT>
 PORT=3001
 ```
 
-## Instalación
+## Installation
 
-1. Clonar el repositorio:
-
-```bash
-git clone https://github.com/mili-cornidez/piggy-edu.git
-```
-
-2. Instalar dependencias:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Iniciar el servidor:
+2. Start the server:
 
 ```bash
 npm start
 ```
 
-Disponible por defecto en `http://localhost:3001`.
+By default, available at `http://localhost:3001`.
 
-## Endpoints Disponibles
+## Backend API Endpoints
 
-### POST /login
-
-Inicia sesión con una wallet address.
-
-**Body:**
-```json
-{
-    "wallet": "0x1234567890abcdef"
-}
-```
-
-**Respuesta:**
-```json
-{
-    "message": "Login successful",
-    "user": {
-        "wallet": "0x1234567890abcdef"
-    },
-    "token": "<tu-token-jwt>"
-}
-```
-
-### GET /levels/:levelId
-
-Obtiene datos de un nivel.
-
-**Headers:**
-- Authorization: Bearer `<tu-token-jwt>`
-
-**Respuesta:**
-```json
-{
-    "id": 1,
-    "name": "Nivel 1",
-    "description": "Introducción a las finanzas",
-    "questions": [...]
-}
-```
-
-### GET /tokens/:tokenId
-
-Obtiene el address de un token.
-
-**Headers:**
-- Authorization: Bearer `<tu-token-jwt>`
-
-**Respuesta:**
-```json
-{
-    "id": 1,
-    "address": "0xabcdef1234567890"
-}
-```
-
-#### Errores:
-- 401 si no hay token válido
-- 404 si el nivel no existe
-
-### GET /user
-
-Obtiene datos del usuario.
-
-**Headers:**
-- Authorization: Bearer `<tu-token-jwt>`
-
-**Respuesta:**
-```json
-{
-    "wallet": "0x1234567890abcdef"
-}
-```
-
-#### Errores:
-- 401 si no hay token válido
-- 404 si el usuario no existe
+For detailed API documentation, refer to the [Swagger Documentation](https://piggy-edu-production.up.railway.app/api-docs).
