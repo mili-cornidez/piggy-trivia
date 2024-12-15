@@ -36,6 +36,13 @@
 
 ## Repository Structure
 
+### Repositories
+   > These repositories were developed separately but have been consolidated for clarity and organization in the final delivery.
+> 
+- [Backend Repository](https://github.com/mili-cornidez/piggy-edu)
+- [Smart Contracts Repository](https://github.com/mili-cornidez/piggy-contracts)
+- [Frontend Repository](https://github.com/manuelbenitez/piggy-app)
+
 ```
 /
 |-- frontend/        # User interface (Next.js)
