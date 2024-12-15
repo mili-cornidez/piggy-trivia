@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  padding: 0 50px;
+
+  margin-bottom: 150px;
+}
+
+.bottomNav {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+
+  background-color: #f8f7fba3;
+  border-top: 1px solid #dbdbdb7e;
+
+  .item {
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    color: #8b5cf6 !important;
+
+    .icon {
+      font-size: 24px;
+    }
+  }
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 48px 24px;
+
+  border-radius: 12px;
+  border: 2px solid var(--Neutral-200, #e2e8f0);
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.quizContainer {
+  width: 100%;
+  height: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.quizItemContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.quizItem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+
+  border-radius: 12px;
+  border-bottom: 6px solid var(--Neutral-200, #e2e8f0);
+  background: var(--Neutral-50, #f8fafc);
+}
+
+.selected {
+  background: linear-gradient(180deg, #a07af7c7 0%, #8a5cf6bd 100%);
+  border-bottom: 6px solid var(--Primary-600, #7c3aed8f);
+}
+
+.correct {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.incorrect {
+  background: var(--error);
+  border-color: var(--error);
+}
+
+.chest {
+  width: 100%;
+  height: calc(100% - 150px);
+  margin: 100px 0;
+  margin-bottom: 150px;
+  position: absolute;
+  top: 0;
+
+  padding: 0 50px;
+
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+}

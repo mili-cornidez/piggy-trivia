@@ -1,0 +1,62 @@
+{
+    "levels": {
+      "1": {
+        "id": 1,
+        "name": "Nivel 1",
+        "description": "Introducción a las finanzas",
+        "questions": [
+          {
+            "id": 1,
+            "question": "¿Para qué sirve el dinero?",
+            "answers": [
+              { "id": 1, "answer": "Para construir castillos mágicos." },
+              { "id": 2, "answer": "Para comprar cosas que necesitamos o queremos." },
+              { "id": 3, "answer": "Para decorar nuestra casa." },
+              { "id": 4, "answer": "Para jugar con él como si fuera un juguete." },
+              { "id": 5, "answer": "Para hacer trucos de magia." }
+            ],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      "2": {
+        "id": 2,
+        "name": "Nivel 2",
+        "description": "Ahorrar dinero",
+        "questions": [
+          {
+            "id": 2,
+            "question": "¿Cómo podemos ahorrar dinero?",
+            "answers": [
+              { "id": 1, "answer": "Comprando todo lo que queremos." },
+              { "id": 2, "answer": "Guardándolo en un lugar seguro." },
+              { "id": 3, "answer": "Regalándoselo a todos nuestros amigos." },
+              { "id": 4, "answer": "Gastándolo en cosas innecesarias." },
+              { "id": 5, "answer": "Dejándolo debajo de la almohada." }
+            ],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      "3": {
+        "id": 3,
+        "name": "Nivel 3",
+        "description": "Invertir dinero",
+        "questions": [
+          {
+            "id": 3,
+            "question": "¿Qué significa invertir dinero?",
+            "answers": [
+              { "id": 1, "answer": "Usarlo para comprar dulces." },
+              { "id": 2, "answer": "Guardarlo para ganar más dinero en el futuro." },
+              { "id": 3, "answer": "Dárselo a alguien sin esperar nada a cambio." },
+              { "id": 4, "answer": "Esconderlo para que nadie lo encuentre." },
+              { "id": 5, "answer": "Hacerlo desaparecer con un truco mágico." }
+            ],
+            "correctAnswer": 2
+          }
+        ]
+      }
+    }
+  }
+  
